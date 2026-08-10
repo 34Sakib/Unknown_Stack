@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-deep: #0A0B0F;
+    --bg-mid: #131519;
+    --bg-elevated: #1A1C22;
+    --card: #15171D;
+    --gold-1: #8E6F3E;
+    --gold-2: #E7C783;
+    --gold-3: #FBF0D2;
+    --steel-1: #5C6472;
+    --steel-2: #8B93A1;
+    --text-primary: #F5F3EF;
+    --text-secondary: #D9DCE2;
+    --text-muted: #8B93A1;
+    --border-hairline: #3A3F4B;
+  }
+
+  body {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  body.font-bengali {
+    font-family: 'Noto Sans Bengali', 'Inter', sans-serif;
+  }
+}
+
+/* Custom Gold Gradient Text */
+.text-gold-gradient {
+  background: linear-gradient(90deg, #8E6F3E 0%, #E7C783 28%, #FBF0D2 50%, #E7C783 72%, #8E6F3E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Metallic Gold Button */
+.btn-gold {
+  background: linear-gradient(135deg, #8E6F3E 0%, #E7C783 50%, #8E6F3E 100%);
+  color: #0A0B0F;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(142, 111, 62, 0.2);
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #A8874E 0%, #FBF0D2 50%, #A8874E 100%);
+  box-shadow: 0 4px 20px rgba(231, 199, 131, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Gold Hairline Border */
+.border-gold-gradient {
+  border-image: linear-gradient(90deg, rgba(142,111,62,0.6) 0%, rgba(231,199,131,0.8) 50%, rgba(142,111,62,0.6) 100%) 1;
+}
+
+/* Signature Hairline Box with Gold Corner Brackets */
+.hairline-frame {
+  position: relative;
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-elevated);
+}
+
+.hairline-frame::before,
+.hairline-frame::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--gold-2);
+  pointer-events: none;
+}
+
+.hairline-frame::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--gold-2);
+  border-left: 2px solid var(--gold-2);
+}
+
+.hairline-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--gold-2);
+  border-right: 2px solid var(--gold-2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0B0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1A1C22;
+  border: 1px solid #3A3F4B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5C6472;
+}
+
+/* Animations */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

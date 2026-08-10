@@ -1,0 +1,21 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Layer 1: Solid Gold Foundation -->
+  <path d="M8 28L20 34L32 28L20 22L8 28Z" fill="url(#gold_grad)" />
+  <!-- Layer 2: Steel Middle -->
+  <path d="M8 20L20 26L32 20L20 14L8 20Z" fill="#5C6472" fill-opacity="0.8" stroke="#8B93A1" stroke-width="0.75" />
+  <!-- Layer 3: Dashed Gold Top -->
+  <path d="M8 12L20 18L32 12L20 6L8 12Z" stroke="url(#gold_grad_light)" stroke-width="1.5" stroke-dasharray="3 2" fill="none" />
+  
+  <defs>
+    <linearGradient id="gold_grad" x1="8" y1="28" x2="32" y2="28" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8E6F3E" />
+      <stop offset="0.5" stop-color="#E7C783" />
+      <stop offset="1" stop-color="#8E6F3E" />
+    </linearGradient>
+    <linearGradient id="gold_grad_light" x1="8" y1="12" x2="32" y2="12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E7C783" />
+      <stop offset="0.5" stop-color="#FBF0D2" />
+      <stop offset="1" stop-color="#E7C783" />
+    </linearGradient>
+  </defs>
+</svg>

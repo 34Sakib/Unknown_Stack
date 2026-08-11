@@ -30,7 +30,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-bg-deep/90 backdrop-blur-md border-b border-border-hairline py-3.5 shadow-2xl"
+          ? "bg-bg-deep/80 backdrop-blur-xl border-b border-border-hairline/80 py-3 shadow-2xl shadow-black/50"
           : "bg-transparent py-5"
       }`}
     >
@@ -39,15 +39,16 @@ export default function Navbar() {
           {/* Logo */}
           <LogoLockup />
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          {/* Desktop Nav Links in Glass Container */}
+          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 px-4 py-1.5 rounded-full bg-card/40 border border-white/5 backdrop-blur-md">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-content-secondary hover:text-gold-2 transition-colors duration-200"
+                className="relative text-xs font-mono uppercase tracking-wider text-content-secondary hover:text-gold-2 px-3 py-1.5 rounded-full hover:bg-white/5 transition-all duration-200 group"
               >
                 {link.name}
+                <span className="absolute bottom-1 left-3 right-3 h-[2px] bg-gradient-to-r from-gold-1 to-gold-2 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></span>
               </a>
             ))}
           </nav>
@@ -57,7 +58,7 @@ export default function Navbar() {
             <LanguageToggle />
             <a
               href="#contact"
-              className="btn-gold px-4 py-2 rounded-md text-xs font-semibold tracking-wider uppercase"
+              className="btn-gold px-5 py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase shadow-glow-gold hover:shadow-glow-gold-lg transition-all"
             >
               {t.nav.cta}
             </a>
@@ -68,7 +69,7 @@ export default function Navbar() {
             <LanguageToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-content-secondary hover:text-gold-2 focus:outline-none"
+              className="p-2 text-content-secondary hover:text-gold-2 focus:outline-none rounded-lg bg-card/60 border border-border-hairline"
               aria-label="Toggle Navigation"
             >
               {mobileMenuOpen ? (
@@ -87,22 +88,22 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-bg-elevated border-b border-border-hairline px-4 pt-4 pb-6 mt-3 space-y-3">
+        <div className="md:hidden bg-bg-elevated/95 backdrop-blur-2xl border-b border-border-hairline px-6 pt-4 pb-6 mt-3 space-y-3 shadow-2xl">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base font-medium text-content-secondary hover:text-gold-2 py-2"
+              className="block text-sm font-mono uppercase tracking-wider text-content-secondary hover:text-gold-2 py-2 border-b border-border-hairline/30"
             >
               {link.name}
             </a>
           ))}
-          <div className="pt-3 border-t border-border-hairline">
+          <div className="pt-3">
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="btn-gold block text-center py-2.5 rounded-md text-sm font-semibold uppercase tracking-wider"
+              className="btn-gold block text-center py-3 rounded-lg text-xs font-bold uppercase tracking-wider shadow-glow-gold"
             >
               {t.nav.cta}
             </a>

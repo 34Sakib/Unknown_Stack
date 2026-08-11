@@ -4,7 +4,7 @@ import LogoLockup from "./icons/LogoLockup";
 import LanguageToggle from "./LanguageToggle";
 import Footer from "./Footer";
 
-export default function ProjectDetailPage({ project, onBack, onNavigateProject }) {
+export default function ProjectDetailPage({ project, onBack, onNavigateProject, onNavigateContact }) {
   const { t, lang } = useLanguage();
 
   useEffect(() => {
@@ -53,15 +53,15 @@ export default function ProjectDetailPage({ project, onBack, onNavigateProject }
         {/* Project Header Info */}
         <div className="space-y-6">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xs uppercase font-mono tracking-widest text-gold-2 px-3 py-1 rounded-full bg-card border border-border-hairline font-semibold">
+            <span className="text-xs uppercase font-mono tracking-widest text-gold-2 px-3.5 py-1.5 rounded-full bg-card/80 border border-gold-2/40 font-bold shadow-glow-gold">
               {project.category}
             </span>
-            <span className="text-xs font-mono text-content-muted bg-bg-elevated px-3 py-1 rounded-full border border-border-hairline flex items-center gap-1.5">
+            <span className="text-xs font-mono text-content-primary bg-bg-elevated/80 px-3.5 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 shadow-md">
               ⚡ {project.metrics}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-content-primary tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-content-primary tracking-tight leading-tight font-heading">
             {project.title}
           </h1>
 
@@ -84,8 +84,8 @@ export default function ProjectDetailPage({ project, onBack, onNavigateProject }
             )}
 
             <button
-              onClick={onBack}
-              className="px-6 py-3.5 rounded-lg bg-bg-elevated hover:bg-card border border-border-hairline hover:border-gold-2/60 text-xs font-mono text-content-primary transition-all"
+              onClick={onNavigateContact || onBack}
+              className="px-6 py-3.5 rounded-lg bg-bg-elevated hover:bg-card border border-border-hairline hover:border-gold-2/60 text-xs font-mono text-content-primary transition-all cursor-pointer"
             >
               {lang === "bn" ? "প্রজেক্ট সার্ভিস শুরু করুন" : "Start Project Consultation"}
             </button>
@@ -93,7 +93,7 @@ export default function ProjectDetailPage({ project, onBack, onNavigateProject }
         </div>
 
         {/* Edge-to-Edge Mock Browser Frame (Fully Filled Image) */}
-        <div className="hairline-frame rounded-2xl overflow-hidden bg-bg-mid shadow-2xl border border-border-hairline">
+        <div className="hairline-frame rounded-2xl overflow-hidden bg-bg-mid shadow-card-luxury border border-white/10">
           {/* Mock Browser Header Bar */}
           <div className="flex items-center justify-between px-4 py-3 bg-bg-deep border-b border-border-hairline">
             <div className="flex items-center gap-2">
@@ -304,19 +304,19 @@ export default function ProjectDetailPage({ project, onBack, onNavigateProject }
         </div>
 
         {/* Direct Consultation Banner */}
-        <div className="hairline-frame rounded-2xl p-8 sm:p-12 bg-gradient-to-r from-bg-elevated via-bg-mid to-bg-elevated text-center space-y-4">
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-content-primary">
+        <div className="hairline-frame rounded-2xl p-8 sm:p-12 bg-gradient-to-r from-bg-elevated via-card to-bg-elevated text-center space-y-5 shadow-card-luxury border border-gold-2/30">
+          <h3 className="text-2xl sm:text-4xl font-extrabold text-content-primary font-heading">
             {lang === "bn" ? "আপনার প্রজেক্টের জন্য যোগাযোগ করুন" : "Ready for your custom web application?"}
           </h3>
-          <p className="text-sm text-content-secondary max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-content-secondary max-w-xl mx-auto font-normal">
             {lang === "bn"
               ? "Unknown Stack দিয়ে আপনার ব্যবসার জন্য তৈরি করুন দ্রুত, নিরাপদ ও নির্ভরযোগ্য ওয়েবসাইট।"
               : "Let Unknown Stack build a fast, secure, and custom Laravel + React website for your business."}
           </p>
           <div className="pt-2">
             <button
-              onClick={onBack}
-              className="btn-gold px-8 py-3.5 rounded-lg text-xs font-bold uppercase tracking-wider inline-block"
+              onClick={onNavigateContact || onBack}
+              className="btn-gold px-9 py-4 rounded-xl text-xs font-extrabold uppercase tracking-widest inline-block cursor-pointer shadow-glow-gold hover:shadow-glow-gold-lg"
             >
               {lang === "bn" ? "প্রজেক্ট শুরু করুন" : "Start Project Consultation"}
             </button>

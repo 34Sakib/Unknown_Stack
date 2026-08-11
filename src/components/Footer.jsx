@@ -7,7 +7,7 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-bg-deep border-t border-border-hairline pt-16 pb-12">
+    <footer className="bg-bg-deep border-t border-border-hairline pt-16 pb-12 bg-grid-pattern relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-border-hairline/60">
@@ -15,20 +15,20 @@ export default function Footer() {
           {/* Col 1: Brand Info */}
           <div className="md:col-span-5 space-y-4">
             <LogoLockup size="large" />
-            <p className="text-sm text-content-secondary max-w-sm font-mono">
+            <p className="text-sm text-gold-2 max-w-sm font-mono font-semibold">
               "{t.footer.tagline}"
             </p>
-            <p className="text-xs text-content-muted leading-relaxed max-w-sm">
+            <p className="text-xs text-content-secondary leading-relaxed max-w-sm font-normal">
               Laravel & React web development studio building fast, secure, and trustworthy digital platforms for serious businesses.
             </p>
           </div>
 
           {/* Col 2: Quick Links */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-gold-2 font-semibold">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-gold-2 font-bold">
               {t.footer.navHeading}
             </h4>
-            <ul className="space-y-2 text-sm text-content-secondary">
+            <ul className="space-y-2.5 text-xs font-mono text-content-secondary">
               <li>
                 <a href="#home" className="hover:text-gold-2 transition-colors">
                   {t.nav.home}
@@ -64,23 +64,23 @@ export default function Footer() {
 
           {/* Col 3: Tech Stack & Socials */}
           <div className="md:col-span-4 space-y-4">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-gold-2 font-semibold">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-gold-2 font-bold">
               {t.footer.legalHeading}
             </h4>
             <div className="flex flex-wrap gap-2 font-mono text-xs text-steel-2">
-              <span className="px-2.5 py-1 rounded bg-card border border-border-hairline">Laravel 11</span>
-              <span className="px-2.5 py-1 rounded bg-card border border-border-hairline">React 18</span>
-              <span className="px-2.5 py-1 rounded bg-card border border-border-hairline">Vite</span>
-              <span className="px-2.5 py-1 rounded bg-card border border-border-hairline">Tailwind CSS</span>
+              <span className="px-3 py-1 rounded-lg bg-card/80 border border-border-hairline text-content-secondary font-medium">Laravel 11</span>
+              <span className="px-3 py-1 rounded-lg bg-card/80 border border-border-hairline text-content-secondary font-medium">React 18</span>
+              <span className="px-3 py-1 rounded-lg bg-card/80 border border-border-hairline text-content-secondary font-medium">Vite</span>
+              <span className="px-3 py-1 rounded-lg bg-card/80 border border-border-hairline text-content-secondary font-medium">Tailwind CSS</span>
             </div>
 
             {/* Social Links */}
             <div className="pt-2 flex items-center space-x-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61592640717418"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-card border border-border-hairline flex items-center justify-center text-content-secondary hover:text-gold-2 hover:border-gold-2 transition-colors"
+                className="w-10 h-10 rounded-xl bg-card border border-border-hairline flex items-center justify-center text-content-secondary hover:text-gold-2 hover:border-gold-2 hover:shadow-glow-gold transition-all duration-300"
                 aria-label="Facebook Page"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

@@ -52,6 +52,16 @@ export default function App() {
     }, 50);
   };
 
+  const navigateToContact = () => {
+    window.location.hash = "#contact";
+    setTimeout(() => {
+      const contactEl = document.getElementById("contact");
+      if (contactEl) {
+        contactEl.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 50);
+  };
+
   // If a project detail page is active, render ProjectDetailPage
   if (selectedProject) {
     return (
@@ -59,6 +69,7 @@ export default function App() {
         project={selectedProject}
         onBack={navigateBackToWork}
         onNavigateProject={navigateToProject}
+        onNavigateContact={navigateToContact}
       />
     );
   }

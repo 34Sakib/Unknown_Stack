@@ -185,7 +185,7 @@ const en = {
           "Implemented secure authentication and role-based access for users and administrators.",
           "Integrated product inventory management, order tracking, and admin dashboard functionalities."
         ],
-        image: "/projects/crm.png",
+        image: "/projects/crm.png?v=2",
         tags: ["Laravel 10", "React.js", "REST API", "MySQL", "Bootstrap 5"],
         metrics: "RESTful API & Dynamic React UI",
         demoLink: "#"
@@ -200,7 +200,7 @@ const en = {
           "Developed admin dashboard for menu and content management.",
           "Designed responsive pages for menu, services, about, and contact sections."
         ],
-        image: "/projects/coffeeblend.png",
+        image: "/projects/coffeeblend.png?v=2",
         tags: ["PHP", "MySQL", "JavaScript", "Bootstrap 5"],
         metrics: "Order Pipeline & Menu Admin",
         demoLink: "#"
@@ -337,9 +337,9 @@ const en = {
     subtitle: "Ready to elevate your online presence? Send us a message or request a direct consultation.",
     form: {
       name: "Your Name",
-      namePlaceholder: "e.g. Tanvir Hasan",
+      namePlaceholder: "Your name",
       contact: "Email or WhatsApp Number",
-      contactPlaceholder: "tanvir@company.com or +8801700000000",
+      contactPlaceholder: "your email@gmail.com",
       projectType: "Project Type",
       selectDefault: "Select project type...",
       optionStatic: "Static Website (৳7,000)",
@@ -354,10 +354,13 @@ const en = {
     direct: {
       title: "Direct Channels",
       emailLabel: "Email Us",
+      emailValue: "unknown.stack.dev@gmail.com",
       phoneLabel: "Phone / WhatsApp",
+      phoneValue: "01570-208953",
+      phoneRaw: "8801570208953",
       locationLabel: "Studio Base",
       locationValue: "Dhaka, Bangladesh",
-      availability: "Available for new projects in Q3 2026",
+      availability: "Always Open",
     }
   },
   footer: {

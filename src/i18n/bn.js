@@ -185,7 +185,7 @@ const bn = {
           "ব্যবহারকারী ও অ্যাডমিনদের জন্য নিরাপদ ভূমিকা-ভিত্তিক অ্যাক্সেস।",
           "ইনভেন্টরি ম্যানেজমেন্ট, অর্ডার ট্র্যাকিং ও অ্যাডমিন ড্যাশবোর্ড।"
         ],
-        image: "/projects/crm.png",
+        image: "/projects/crm.png?v=2",
         tags: ["Laravel 10", "React.js", "REST API", "MySQL", "Bootstrap 5"],
         metrics: "RESTful API ও ডাইনামিক React ইউআই",
         demoLink: "#"
@@ -200,7 +200,7 @@ const bn = {
           "মেনু ও কন্টেন্ট পরিচালনার জন্য অ্যাডমিন ড্যাশবোর্ড।",
           "মেনু, সার্ভিস, আমাদের কথা ও যোগাযোগ পেজের রেসপন্সিভ ডিজাইন।"
         ],
-        image: "/projects/coffeeblend.png",
+        image: "/projects/coffeeblend.png?v=2",
         tags: ["PHP", "MySQL", "JavaScript", "Bootstrap 5"],
         metrics: "অর্ডার পাইপলাইন ও মেনু অ্যাডমিন",
         demoLink: "#"
@@ -337,9 +337,9 @@ const bn = {
     subtitle: "অনলাইনে আপনার ব্যবসা আরও শক্তিশালী করতে চান? মেসেজ দিন বা সরাসরি কথা বলুন।",
     form: {
       name: "আপনার নাম",
-      namePlaceholder: "যেমন: আব্দুল্লাহ আল মামুন",
+      namePlaceholder: "Your name",
       contact: "ইমেইল বা হোয়াটসঅ্যাপ নম্বর",
-      contactPlaceholder: "email@domain.com বা 01700000000",
+      contactPlaceholder: "your email@gmail.com",
       projectType: "প্রজেক্টের ধরন",
       selectDefault: "নির্বাচন করুন...",
       optionStatic: "স্ট্যাটিক ওয়েবসাইট (৳৭,০০০)",
@@ -354,10 +354,13 @@ const bn = {
     direct: {
       title: "সরাসরি মাধ্যম",
       emailLabel: "ইমেইল করুন",
+      emailValue: "unknown.stack.dev@gmail.com",
       phoneLabel: "ফোন / হোয়াটসঅ্যাপ",
+      phoneValue: "01570-208953",
+      phoneRaw: "8801570208953",
       locationLabel: "অবস্থান",
-      locationValue: "ঢাকা, বাংলাদেশ",
-      availability: "নতুন প্রজেক্টের জন্য যোগাযোগ করুন",
+      locationValue: "কুরিল, ঢাকা, বাংলাদেশ",
+      availability: "সর্বদা খোলা (Always Open)",
     }
   },
   footer: {

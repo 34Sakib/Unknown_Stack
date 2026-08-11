@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --bg-deep: #0A0B0F;
-    --bg-mid: #131519;
-    --bg-elevated: #1A1C22;
-    --card: #15171D;
+    --bg-deep: #07080B;
+    --bg-mid: #0F1116;
+    --bg-elevated: #161921;
+    --card: #12141A;
     --gold-1: #8E6F3E;
     --gold-2: #E7C783;
     --gold-3: #FBF0D2;
@@ -16,7 +16,7 @@
     --text-primary: #F5F3EF;
     --text-secondary: #D9DCE2;
     --text-muted: #8B93A1;
-    --border-hairline: #3A3F4B;
+    --border-hairline: #2B303C;
   }
 
   body {
@@ -24,39 +24,83 @@
     color: var(--text-primary);
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
   }
 
   body.font-bengali {
     font-family: 'Noto Sans Bengali', 'Inter', sans-serif;
   }
+
+  body.font-bengali h1, 
+  body.font-bengali h2, 
+  body.font-bengali h3, 
+  body.font-bengali h4 {
+    font-family: 'Noto Sans Bengali', 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Ambient Subtle Background Grid Pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
 /* Custom Gold Gradient Text */
 .text-gold-gradient {
   background: linear-gradient(90deg, #8E6F3E 0%, #E7C783 28%, #FBF0D2 50%, #E7C783 72%, #8E6F3E 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Glassmorphism Card Utility */
+.glass-card {
+  background: rgba(18, 20, 26, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(22, 25, 33, 0.85);
+  border-color: rgba(231, 199, 131, 0.35);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(231, 199, 131, 0.12);
+  transform: translateY(-4px);
 }
 
 /* Metallic Gold Button */
 .btn-gold {
+  position: relative;
   background: linear-gradient(135deg, #8E6F3E 0%, #E7C783 50%, #8E6F3E 100%);
-  color: #0A0B0F;
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 10px rgba(142, 111, 62, 0.2);
+  background-size: 200% 200%;
+  color: #07080B;
+  font-weight: 700;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(142, 111, 62, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .btn-gold:hover {
-  background: linear-gradient(135deg, #A8874E 0%, #FBF0D2 50%, #A8874E 100%);
-  box-shadow: 0 4px 20px rgba(231, 199, 131, 0.35);
-  transform: translateY(-1px);
+  background-position: 100% 100%;
+  box-shadow: 0 8px 30px rgba(231, 199, 131, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
 }
 
 /* Gold Hairline Border */
 .border-gold-gradient {
-  border-image: linear-gradient(90deg, rgba(142,111,62,0.6) 0%, rgba(231,199,131,0.8) 50%, rgba(142,111,62,0.6) 100%) 1;
+  border-image: linear-gradient(90deg, rgba(142,111,62,0.6) 0%, rgba(231,199,131,0.85) 50%, rgba(142,111,62,0.6) 100%) 1;
 }
 
 /* Signature Hairline Box with Gold Corner Brackets */
@@ -70,10 +114,11 @@
 .hairline-frame::after {
   content: '';
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-color: var(--gold-2);
   pointer-events: none;
+  transition: all 0.3s ease;
 }
 
 .hairline-frame::before {
@@ -90,18 +135,25 @@
   border-right: 2px solid var(--gold-2);
 }
 
+.hairline-frame:hover::before,
+.hairline-frame:hover::after {
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 8px rgba(231, 199, 131, 0.6);
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A0B0F;
+  background: #07080B;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1A1C22;
-  border: 1px solid #3A3F4B;
+  background: #161921;
+  border: 1px solid #2B303C;
   border-radius: 4px;
 }
 
@@ -121,3 +173,4 @@
   opacity: 1;
   transform: translateY(0);
 }
+

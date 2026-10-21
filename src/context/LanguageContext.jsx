@@ -12,11 +12,7 @@ export function LanguageProvider({ children }) {
 
   useEffect(() => {
     document.documentElement.lang = lang;
-    if (lang === "bn") {
-      document.body.classList.add("font-bengali");
-    } else {
-      document.body.classList.remove("font-bengali");
-    }
+    document.body.classList.toggle("bn", lang === "bn");
     localStorage.setItem("preferred-lang", lang);
   }, [lang]);
 
